@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Degisew Asefa Kenea | KYC Officer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7F5; --surface:#FFFFFF; --ink:#12231C; --muted:#4F625A; --line:#D5DDD8;
+  --brand:#0E5A43; --brand-ink:#FFFFFF; --stamp:#B5701A; --ok:#0E7A57;
+  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1713; --surface:#14241D; --ink:#E8F0EC; --muted:#9DB2A8; --line:#264036;
+    --brand:#4FC79A; --brand-ink:#08150F; --stamp:#E3A44F; --ok:#4FC79A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1713; --surface:#14241D; --ink:#E8F0EC; --muted:#9DB2A8; --line:#264036;
+  --brand:#4FC79A; --brand-ink:#08150F; --stamp:#E3A44F; --ok:#4FC79A; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-text-size-adjust:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.01em}
+
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;padding-bottom:1rem;gap:1rem}
+.mark{font-family:var(--display);font-weight:800;text-decoration:none;font-size:1.1rem}
+nav{display:flex;gap:1.1rem;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+.hero{padding:3.5rem 0 4rem}
+.hero .wrap{display:grid;gap:2.5rem;grid-template-columns:1fr}
+.hero h1{font-size:clamp(2.6rem,9vw,5rem);font-weight:800}
+.role{font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,3.5vw,1.6rem);color:var(--brand);margin:.9rem 0 1.4rem}
+.lede{max-width:34rem;color:var(--muted);margin:0 0 1.8rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.75rem 1.2rem;border-radius:8px;font-weight:500;text-decoration:none;border:1.5px solid var(--brand)}
+.btn.primary{background:var(--brand);color:var(--brand-ink)}
+.btn.ghost{color:var(--ink)}
+.btn:hover{filter:brightness(1.08)}
+
+.photo{margin:0 0 1.5rem;width:132px;height:132px;border-radius:50%;overflow:hidden;border:3px solid var(--brand);background:var(--surface);display:grid;place-items:center}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo span{font-family:var(--display);font-weight:800;font-size:2.4rem;color:var(--brand)}
+.editbar{margin:-.5rem 0 1.5rem;padding:1rem;border:1.5px dashed var(--stamp);border-radius:10px;max-width:34rem}
+.editbar .row{display:flex;flex-wrap:wrap;gap:.6rem}
+.editbar button.btn,.editbar label.btn{cursor:pointer;font:inherit;background:transparent;color:var(--ink);padding:.55rem 1rem}
+.editbar p{margin:.7rem 0 0;color:var(--muted);font-size:.9rem}
+.file{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;padding:1.4rem;align-self:start;position:relative}
+.file h2{font-size:1.15rem;margin-bottom:.2rem}
+.file p.sub{margin:0 0 1rem;color:var(--muted);font-size:.92rem}
+.file ul{list-style:none;margin:0;padding:0}
+.file li{display:flex;align-items:center;gap:.8rem;padding:.7rem 0;border-top:1px solid var(--line)}
+.file li span.t{flex:1}
+.file li b{font-weight:500;color:var(--ok);font-size:.92rem}
+.tick{width:1.5rem;height:1.5rem;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;flex:none}
+.tick svg{width:.85rem;height:.85rem;stroke:var(--brand-ink);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.file li.done .tick{background:var(--ok);border-color:var(--ok)}
+.file li.done .tick svg{opacity:1}
+.file li b{opacity:0}
+.file li.done b{opacity:1}
+.stamp{position:absolute;right:1rem;top:-1rem;background:var(--stamp);color:#fff;font-family:var(--display);font-weight:700;padding:.35rem .8rem;border-radius:6px;transform:rotate(3deg);font-size:.95rem}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.8rem,5vw,2.4rem);margin-bottom:2rem}
+
+.about{max-width:42rem;font-size:1.15rem}
+.stats{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2rem}
+.stats div{min-width:8rem}
+.stats strong{display:block;font-family:var(--display);font-size:1.6rem}
+.stats span{color:var(--muted);font-size:.95rem}
+
+.tl{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:2px solid var(--line)}
+.job{position:relative;padding-bottom:2.6rem}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:calc(-1.4rem - 7px);top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--brand)}
+.job.now::before{background:var(--brand)}
+.job h3{font-size:1.35rem}
+.meta{color:var(--muted);margin:.3rem 0 .9rem;font-size:.97rem}
+.job ul{margin:0;padding-left:1.1rem;max-width:46rem}
+.job li{margin-bottom:.5rem}
+.job li::marker{color:var(--brand)}
+
+.skills{display:grid;gap:1.8rem;grid-template-columns:1fr}
+.skills h3{font-size:1.1rem;margin-bottom:.8rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.chips li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.35rem .85rem;font-size:.95rem}
+
+.two{display:grid;gap:2rem;grid-template-columns:1fr}
+.two h3{font-size:1.2rem;margin-bottom:.5rem}
+.two p{margin:.2rem 0;color:var(--muted)}
+.two p.k{color:var(--ink);font-weight:500}
+
+.contact p{max-width:34rem;color:var(--muted);margin:0 0 1.5rem}
+.contact dl{display:grid;gap:.6rem;margin:0 0 1.6rem}
+.contact dt{font-weight:500}
+.contact dd{margin:0;color:var(--muted)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (min-width:760px){
+  .hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center}
+  .skills{grid-template-columns:repeat(3,1fr)}
+  .two{grid-template-columns:1fr 1fr}
+  .wrap{padding:0 2rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tick,.file li b{transition:none!important}}
+.tick,.file li b{transition:opacity .3s,background .3s}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Degisew Asefa Kenea</a>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <figure class="photo"><img id="pimg" alt="Portrait of Degisew Asefa Kenea" hidden><span id="pinit" aria-hidden="true">DA</span></figure>
+        <div class="editbar" id="editbar" hidden>
+          <div class="row">
+            <label class="btn" for="pfile">Upload photo</label>
+            <input type="file" id="pfile" accept="image/*" hidden>
+            <button class="btn" id="pdl" type="button">Download photo.jpg</button>
+            <button class="btn" id="pclr" type="button">Remove</button>
+          </div>
+          <p id="pmsg">Your photo is saved in this browser. To show it to visitors, download photo.jpg and upload it to GitHub next to index.html.</p>
+        </div>
+        <h1>Degisew Asefa Kenea</h1>
+        <p class="role">Know Your Customer (KYC) Officer</p>
+        <p class="lede">I verify who banks’ customers are, where their money comes from, and how much risk they carry, so that every account is compliant and every file is ready for audit.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:degisewasefa594@gmail.com">Email me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/degisew-asefa-19b4b1436" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+          <a class="btn ghost" href="tel:+251910345342">Call +251 910 345 342</a>
+        </div>
+      </div>
+      <aside class="file" aria-label="What a KYC review covers">
+        <span class="stamp">Cleared</span>
+        <h2>A KYC review, step by step</h2>
+        <p class="sub">The checks I run on every client file.</p>
+        <ul id="checks">
+          <li><i class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span class="t">Identity documents</span><b>Verified</b></li>
+          <li><i class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span class="t">Ownership structure</span><b>Verified</b></li>
+          <li><i class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span class="t">Source of funds</span><b>Verified</b></li>
+          <li><i class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span class="t">AML/CTF risk rating</span><b>Assessed</b></li>
+          <li><i class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span class="t">Case file records</span><b>Audit ready</b></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p class="about">I’m a detail-oriented KYC professional with more than three years of experience in customer due diligence and risk assessment. I work with relationship managers, branch staff and compliance teams to keep documentation complete and data accurate, and I care about meticulous records and strict regulatory adherence.</p>
+      <div class="stats">
+        <div><strong>3+ years</strong><span>in KYC and due diligence</span></div>
+        <div><strong>3 roles</strong><span>at Cooperative Bank of Oromia</span></div>
+        <div><strong>3 languages</strong><span>English, Oromo, Amharic</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <ol class="tl">
+        <li class="job now">
+          <h3>Know Your Customer (KYC) Officer</h3>
+          <p class="meta">Cooperative Bank of Oromia · June 2026 to present</p>
+          <ul>
+            <li>Run due diligence and risk assessments on clients to meet regulatory requirements.</li>
+            <li>Perform customer due diligence (CDD) and enhanced due diligence (EDD) for new and existing customers, verifying identity documents, ownership structures and source of funds under AML/CTF and internal policy.</li>
+            <li>Coordinate with relationship managers, branch staff and compliance teams to collect complete documentation and resolve onboarding queries right first time.</li>
+            <li>Keep accurate customer records and case files in core banking and document management systems, supporting audit readiness.</li>
+            <li>Work with clients to gather information and resolve discrepancies in their KYC documentation.</li>
+            <li>Report on emerging KYC compliance trends to senior management to support strategic decisions.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <h3>Associate Know Your Customer (KYC) Officer</h3>
+          <p class="meta">Cooperative Bank of Oromia · June 2024 to June 2026</p>
+          <ul>
+            <li>Carried out customer due diligence in line with regulatory requirements and internal policies.</li>
+            <li>Worked with cross-functional teams to streamline KYC processes and improve data accuracy.</li>
+            <li>Assessed risk on new and existing clients and flagged potential areas of concern.</li>
+            <li>Kept up to date with KYC regulations and best practice to inform policy updates.</li>
+            <li>Reviewed customer documentation to verify identity and assess risk levels.</li>
+            <li>Took part in audits and assessments of how well KYC processes work.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <h3>Graduate Trainee</h3>
+          <p class="meta">Cooperative Bank of Oromia · May 2023 to May 2024</p>
+          <ul>
+            <li>Delivered assigned tasks to standard and on time, with a focus on customer service.</li>
+            <li>Gave timely, accurate answers to customer inquiries, which improved satisfaction ratings.</li>
+            <li>Assisted with KYC procedures by verifying customer documentation against regulatory requirements.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Compliance and risk</h3>
+          <ul class="chips">
+            <li>KYC / CDD</li><li>AML/CTF awareness</li><li>Risk assessment</li><li>Compliance standards</li><li>Information management</li><li>Data analysis and reporting</li>
+          </ul>
+        </div>
+        <div>
+          <h3>How I work</h3>
+          <ul class="chips">
+            <li>Attention to detail</li><li>Analytical thinking</li><li>Problem solving</li><li>Adaptability</li><li>Time management</li>
+          </ul>
+        </div>
+        <div>
+          <h3>With people</h3>
+          <ul class="chips">
+            <li>Communication</li><li>Customer service</li><li>Active listening</li><li>Team collaboration</li><li>Professional collaboration</li><li>Knowledge sharing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="background">
+    <div class="wrap two">
+      <div>
+        <h2 style="font-size:clamp(1.8rem,5vw,2.4rem);margin-bottom:1.2rem">Education</h2>
+        <h3>Bachelor’s Degree in Computer Science</h3>
+        <p>Gambella University</p>
+        <p>2017 to 2021</p>
+      </div>
+      <div>
+        <h2 style="font-size:clamp(1.8rem,5vw,2.4rem);margin-bottom:1.2rem">Languages</h2>
+        <p class="k">English <span style="font-weight:400;color:var(--muted)">· Proficient</span></p>
+        <p class="k">Amharic <span style="font-weight:400;color:var(--muted)">· Proficient</span></p>
+        <p class="k">Oromo <span style="font-weight:400;color:var(--muted)">· Native</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Open to conversations about KYC, compliance and customer due diligence roles.</p>
+      <dl>
+        <div><dt>Email</dt><dd><a href="mailto:degisewasefa594@gmail.com">degisewasefa594@gmail.com</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/degisew-asefa-19b4b1436" target="_blank" rel="noopener noreferrer">linkedin.com/in/degisew-asefa-19b4b1436</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+251910345342">+251 910 345 342</a></dd></div>
+        <div><dt>Location</dt><dd>Addis Ababa, Ethiopia</dd></div>
+      </dl>
+      <a class="btn primary" href="mailto:degisewasefa594@gmail.com">Send an email</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Degisew Asefa Kenea</div>
+</footer>
+
+<script>
+(function(){
+  var items=document.querySelectorAll('#checks li');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  items.forEach(function(li,i){
+    if(reduce){li.classList.add('done');return;}
+    setTimeout(function(){li.classList.add('done');},500+i*450);
+  });
+})();
+</script>
+<script>
+(function(){
+  var img=document.getElementById('pimg'),init=document.getElementById('pinit'),
+      bar=document.getElementById('editbar'),msg=document.getElementById('pmsg'),KEY='degisew-photo';
+  function show(src){img.src=src;}
+  img.onload=function(){img.hidden=false;init.hidden=true;};
+  img.onerror=function(){img.hidden=true;init.hidden=false;};
+  var saved=null;
+  try{saved=localStorage.getItem(KEY);}catch(e){}
+  show(saved||'photo.jpg');
+  function sync(){bar.hidden=(location.hash!=='#edit');}
+  sync();window.addEventListener('hashchange',sync);
+  document.getElementById('pfile').addEventListener('change',function(e){
+    var f=e.target.files&&e.target.files[0];if(!f)return;
+    var r=new FileReader();
+    r.onload=function(){
+      var im=new Image();
+      im.onload=function(){
+        var s=Math.min(im.width,im.height),c=document.createElement('canvas');
+        c.width=c.height=600;
+        c.getContext('2d').drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,600,600);
+        var url=c.toDataURL('image/jpeg',0.85);
+        show(url);
+        try{localStorage.setItem(KEY,url);msg.textContent='Saved in this browser. Download photo.jpg to show it to visitors.';}
+        catch(err){msg.textContent='Could not save in this browser. Use Download photo.jpg instead.';}
+      };
+      im.src=r.result;
+    };
+    r.readAsDataURL(f);
+  });
+  document.getElementById('pdl').addEventListener('click',function(){
+    if(img.hidden||!img.src){msg.textContent='Upload a photo first.';return;}
+    var a=document.createElement('a');a.href=img.src;a.download='photo.jpg';document.body.appendChild(a);a.click();a.remove();
+  });
+  document.getElementById('pclr').addEventListener('click',function(){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    img.hidden=true;init.hidden=false;img.removeAttribute('src');msg.textContent='Photo removed from this browser.';
+  });
+})();
+</script>
+</body>
+</html>
